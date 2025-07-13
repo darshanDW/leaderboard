@@ -17,7 +17,7 @@ function HomePage() {
 
   const fetchUsers = async (page = 1) => {
     try {
-      const response = await fetch(`http://localhost:3001/users?page=${page}&limit=5`);
+      const response = await fetch(`https://leaderboard-tg1b.onrender.com/users?page=${page}&limit=5`);
       const data = await response.json();
       // console.log(`${page}:`, data);
       setUsers(data.users);
@@ -30,7 +30,7 @@ function HomePage() {
 
   const fetchLeaderboard = async () => {
     try {
-      const response = await fetch('http://localhost:3001/leaderboard');
+      const response = await fetch('https://leaderboard-tg1b.onrender.com/leaderboard');
       const data = await response.json();
       setLeaderboard(data);
     } catch (error) {
@@ -42,7 +42,7 @@ function HomePage() {
     if (!selectedUser) return alert('Please select a user');
 
     try {
-      const response = await fetch('http://localhost:3001/claim', {
+      const response = await fetch('https://leaderboard-tg1b.onrender.com/claim', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ function HomePage() {
     if (!name) return alert('Please enter a user name');
 
     try {
-      const response = await fetch('http://localhost:3001/users', {
+      const response = await fetch('https://leaderboard-tg1b.onrender.com/users', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
